@@ -1,0 +1,32 @@
+
+	1. I created one file of size 5MB name < vfsFile >
+		
+		$ truncate -s 5M vfsFile
+
+	2. I formated this file with vfat filesystem.
+
+		$ mkfs.vfat -F 12 vfsFile
+
+	3. Take hexdump of this vfsFile
+
+		$ hexdump -C vfsFile > hexdumpOfvfsFile
+
+	4. mount this <vfsFile>. So I create one directory name <fileMountPoint>
+	   And mount <vfsFile> with this folder.
+		
+		$ mkdir fileMountPoint 
+		$ sudo mount ./vfsFile fileMountPoint
+
+	5. Now I can check that it is mounted OR not.
+
+		$ df -h
+		$ lsblk -f
+
+	6. I create a file under < fileMountPoint > name < newFile1.txt >
+	7. I take hexdump again and See the changes again.
+	8. I write few words into file. and again check hexdump and see changes again.
+	9. I made another folder into it where i open a file newFile.c and Write few words.
+	10. 
+
+
+
